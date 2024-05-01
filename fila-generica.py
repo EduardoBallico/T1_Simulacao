@@ -114,8 +114,6 @@ class NumerosPseudoAleatorios:
         self.x = self.semente
         self.atual = -1
 
-
-
 class Escalonador:
     def __init__(self, numeros_aleatorios: NumerosPseudoAleatorios):
         self.numeros_aleatorios = numeros_aleatorios
@@ -129,8 +127,6 @@ class Escalonador:
         self.agenda.sort(key=lambda evento: evento.tempo)
 
     def adicionar_aleatorio(self, evento, num_aleatorio):
-        print(f"event {evento}")
-        print(f"rand_num {num_aleatorio}")
         evento.tempo = evento.tempo + num_aleatorio
         self.agenda.append(evento)
         self.agenda.sort(key=lambda evento: evento.tempo)
@@ -220,8 +216,8 @@ class Simulacao:
                 self.escalonador.adicionar(evento, alvo.intervalo_atendimento)
         else:
             alvo.perda()
-        print(alvo)
-        self.escalonador.adicionar_aleatorio(Evento(TipoEvento.CHEGADA, self.tempo_global, None, alvo), alvo.intervalo_chegada)
+        # print(alvo)
+        self.escalonador.adicionar(Evento(TipoEvento.CHEGADA, self.tempo_global, None, alvo), alvo.intervalo_chegada)
 
     def saida(self, origem, _):
         origem.sair()
@@ -288,7 +284,7 @@ def adicionar_rede(origem_id, alvo_id, prob, filas: list):
 def main():
     CONFIG = carregar_config(argv[1])
 
-    tempo_chegada = CONFIG['chegadas']['Q1']
+    tempo_chegada = CONFIG['chegadas']['F1']
 
     sementes = CONFIG['semente']
     

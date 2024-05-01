@@ -1,19 +1,19 @@
 chegadas:
-  Q1: 2.0
+  F1: 2.0
 
 filas:
-  Q1:
+  F1:
     servidores: 1
     minChegada: 2.0
     maxChegada: 4.0
     minAtendimento: 1.0
     maxAtendimento: 2.0
-  Q2:
+  F2:
     servidores: 2
     capacidade: 5
     minAtendimento: 4.0
     maxAtendimento: 8.0
-  Q3:
+  F3:
     servidores: 2
     capacidade: 10
     minAtendimento: 5.0
