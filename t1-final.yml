@@ -1,0 +1,41 @@
+chegadas:
+  Q1: 2.0
+
+filas:
+  Q1:
+    servidores: 1
+    minChegada: 2.0
+    maxChegada: 4.0
+    minAtendimento: 1.0
+    maxAtendimento: 2.0
+  Q2:
+    servidores: 2
+    capacidade: 5
+    minAtendimento: 4.0
+    maxAtendimento: 8.0
+  Q3:
+    servidores: 2
+    capacidade: 10
+    minAtendimento: 5.0
+    maxAtendimento: 15.0
+
+rede:
+  - origem: Q1
+    alvo: Q2
+    probabilidade: 0.8
+  - origem: Q1
+    alvo: Q3
+    probabilidade: 0.2
+  - origem: Q2
+    alvo: Q1
+    probabilidade: 0.3
+  - origem: Q2
+    alvo: Q2
+    probabilidade: 0.5
+  - origem: Q3
+    alvo: Q3
+    probabilidade: 0.7
+
+numerosRndPorSemente: 1000
+semente:
+  - 1377
